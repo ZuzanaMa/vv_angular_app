@@ -55,8 +55,7 @@ displayedColumns: string[] = ['fullName', 'transactionType', 'issueDate', 'amoun
 
   constructor(private transactionService: TransactionsServiceService ){
     this.transactionService.getTransactions$().subscribe((response) => {
-      this.transactionList = response.data;
-      console.log(response.data);
+      this.transactionList = response;
     }) 
   }
 }

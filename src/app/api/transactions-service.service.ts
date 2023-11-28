@@ -20,11 +20,11 @@ export class TransactionsServiceService {
   /** GET heroes from the server */
   constructor(private httpClient: HttpClient){}
   getTransactions$(){
-    return this.httpClient.get<{data:ITransaction[]}>("/api/transactions");
+    return this.httpClient.get<ITransaction[]>("/api/transaction");
   }
 
   getTransactionDetailId$(id: string){
-    return this.httpClient.get<{data:ITransaction}>("/api/transactions/${id}");
+    return this.httpClient.get<ITransaction>(`/api/transaction/${id}`);
   }
 }
 

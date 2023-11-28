@@ -33,9 +33,10 @@ export class BasicAccountsDetailComponent {
   constructor(private transactionService: TransactionsServiceService, private route: ActivatedRoute) { 
       this.route.params.subscribe((params)=>{
         const transactionId = params['id'];
+        console.log("parameter: " + params['id']);
 
-        this.transactionService.getTransactionDetailId$(transactionId).subscribe((response)=>{
-          this.transactionData = response.data;
+        this.transactionService.getTransactionDetailId$("1").subscribe((response)=>{
+          this.transactionData = response;
         })
       })
    }
